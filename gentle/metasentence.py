@@ -38,7 +38,7 @@ class MetaSentence:
 
     def _tokenize(self):
         self._seq = []
-        for m in re.finditer(ur'(\w|\’\w|\'\w)+', self.raw_sentence, re.UNICODE):
+        for m in re.finditer(ur'(\w|\'\w|\'\w)+', self.raw_sentence, re.UNICODE):
             start, end = m.span()
             word = m.group().encode('utf-8')
             token = kaldi_normalize(word, self.vocab)
